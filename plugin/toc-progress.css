@@ -1,0 +1,41 @@
+/**
+ * TOC-Progress Plugin Styles
+ */
+
+#toc-progress-view {
+    /* Positioning and Sizing */
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 100;
+    font-size: 0.5em; /* 0.5em size requirement */
+    line-height: 1.4;
+    font-family: sans-serif;
+    padding: 5px 10px;
+    border-radius: 10px;
+    pointer-events: none; /* Prevents interaction from blocking mouse clicks on slides */
+
+    /* Appearance and Transitions */
+    background-color: #F2F2F2;
+    color: #fff; /* Default future/inactive color */
+    opacity: 0; /* Hidden by default, managed by JS */
+    transition: opacity 0.5s ease; /* Smooth fading for show/hide */
+}
+
+.toc-progress-entry {
+    /* Individual entry styling */
+    transition: color 0.3s ease, font-weight 0.3s ease; /* Smooth transition for color/weight changes */
+    color: black; /* Default text color */
+}
+
+/* Passed Sections */
+#toc-progress-view .toc-progress-entry.passed {
+    color: #aaa;
+    font-weight: normal;
+}
+
+/* Active Section */
+#toc-progress-view .toc-progress-entry.active {
+    color: #04AA6D; /* Highlight color */
+    font-weight: bold;
+}
