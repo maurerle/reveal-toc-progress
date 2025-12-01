@@ -32,8 +32,14 @@ var RevealTocProgress = function() {
         const slides = reveal.getSlides();
 
         slides.forEach((slide) => {
-            if (slide.getAttribute('data-toc-entry') === 'true') {
-                const entryText = slide.dataset.title || slide.querySelector('h1, h2, h3')?.textContent || `Section ${tocEntries.length + 1}`;
+            const tocEntry = slide.getAttribute('data-toc-entry')
+            if (tocEntry) {
+                if (tocEntry === 'true') {
+                    const entryText = slide.dataset.title || slide.querySelector('h1, h2, h3')?.textContent || `Section ${tocEntries.length + 1}`;
+                }
+                else {
+                    const entryText = tocEntry
+                }
 
                 tocEntries.push({
                     element: slide,
